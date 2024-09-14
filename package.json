@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mdiaz215/myShop/issues"
   },
-  "homepage": "https://github.com/mdiaz215/myShop#readme"
+  "homepage": "https://github.com/mdiaz215/myShop#readme",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
 }
