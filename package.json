@@ -1,0 +1,19 @@
+{
+  "name": "myshop",
+  "version": "1.0.0",
+  "description": "React Shopping Cart App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdiaz215/myShop.git"
+  },
+  "author": "Marisa Diaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdiaz215/myShop/issues"
+  },
+  "homepage": "https://github.com/mdiaz215/myShop#readme"
+}
