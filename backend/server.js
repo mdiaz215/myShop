@@ -1,15 +1,19 @@
-const express = require('express')
-const products = require('./data/products')
+import express from 'express';
+import dotenv from 'dotenv';
+import connectDB from './config/db.js'
+import productRoutes from './routes/productRoutes.js'
+import userRoutes from './routes/userRoutes.js'
+import errorHandler from './middleware/errorMiddleware.js';
 
 const app = express()
+dotenv.config()
+connectDB()
 
-app.get('/api/products', (req, res) => {
-    res.json(products)
-})
+app.use(express.json())
+app.use('/api/products', productRoutes)
+app.use('/api/users', userRoutes)
+app.get('/api/config/paypal', (req, res) => res.send(process.env.PAYPAL_CLIENT_ID))
 
-app.get('/api/product/:id', (req, res) => {
-    const product = products.find(p => p._id === req.params.id)
-    res.json(product)
-})
+app.use(errorHandler)
 
-app.listen(5000, console.log('Server is now running on port 5000'))
+app.listen(7050, console.log('Server is now running on port 7050'))
