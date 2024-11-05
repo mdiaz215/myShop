@@ -15,5 +15,5 @@ app.use('/api/users', userRoutes)
 app.get('/api/config/paypal', (req, res) => res.send(process.env.PAYPAL_CLIENT_ID))
 
 app.use(errorHandler)
-
-app.listen(7050, console.log('Server is now running on port 7050'))
+const port = process.env.PORT
+app.listen(port, console.log(`Server is now running on port ${port}`))
